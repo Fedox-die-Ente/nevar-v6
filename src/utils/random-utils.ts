@@ -1,19 +1,27 @@
+/**
+ * Utility class for generating random values and performing random operations.
+ */
 class RandomUtils {
 	/**
-	 * Generate a random string
-	 * @param length
+	 * Generates a random string of the specified length.
+	 * @param {number} length - The length of the random string to generate.
+	 * @returns {string} The generated random string.
 	 */
 	public randomString(length: number): string {
 		// Define characters
-		const characters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
 		// Generate random string
-		return Array.from({ length }, () => characters[Math.floor(Math.random() * characters.length)]).join('');
+		return Array.from(
+			{ length },
+			() => characters[Math.floor(Math.random() * characters.length)]
+		).join('');
 	}
 
 	/**
-	 * Shuffle an array
-	 * @param array
+	 * Shuffles an array in random order.
+	 * @param {any[]} array - The array to shuffle.
+	 * @returns {any[]} The shuffled array.
 	 */
 	public shuffleArray(array: any[]): any[] {
 		// Shuffle an array
@@ -21,8 +29,10 @@ class RandomUtils {
 	}
 
 	/**
-	 * Choose a random element from an array
-	 * @param choices
+	 * Selects a random element from an array.
+	 * @template T
+	 * @param {T[]} choices - The array of choices to select from.
+	 * @returns {T} The randomly selected element.
 	 */
 	public randomChoice<T>(choices: T[]): T {
 		// Choose a random element from an array
@@ -30,7 +40,8 @@ class RandomUtils {
 	}
 
 	/**
-	 * Generate a random color in hex format
+	 * Generates a random hexadecimal color code.
+	 * @returns {string} The generated random color code. (e.g., #FFFFFF)
 	 */
 	public randomColor(): string {
 		// Generate a random color
@@ -39,9 +50,9 @@ class RandomUtils {
 	}
 
 	/**
-	 * Generate a random number
-	 * @param min
-	 * @param max
+	 * Generates a random number within the specified range.
+	 * @param {number} min - The minimum value of the range.
+	 * @param {number} max - The maximum value of the range.
 	 */
 	public randomNumber(min: number, max: number): number {
 		// Generate a random number
